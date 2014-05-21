@@ -1,0 +1,13 @@
+PassDoodle is an idea for a password alternative for touch devices that allows a user to draw a single-stroke drawing that will be saved as their PassDoodle. After the user profile is created, the user must recreate the drawing to login. 
+
+Currently, two ideas exist for the implemenation of this system:
+
+One uses the coordinates of the points a user draws, and compares this to the saved PassDoodle. The user is allowed a certain tolerance for how far from the original PassDoodle the login attempt is. This tolerance can be seen in the simple diagrams in the "Unsecure/Concept" folder. This method, while more forgiving to minor differences in the recreation of the drawing, does not (to my understanding) allow for a PassDoodle to be stored securely on a server in a salted-hash form. Therefore, this method would require storing a non-hashed value on any server utilizing this system.
+
+The second method uses an invisible grid layout projected on the drawing space. Regardless of the particular shape of the drawing, the user must traverse through the same grid squares in the same order for the system to recognize the input as equal to the saved PassDoodle. The size of the grid squares can be changed to refine the input process. While this method can be less forgiving for little mistakes (straying slightly into an incorrect square will cause the login to fail), this method can be used to create a system where by a server can store a salted-hash of the saved "password", thus making this method more viable from a security standpoint.
+
+These methods will both be developed using a combination of Java (for the Android-based user client), and a to-be-determined server-side language (for the storage and verification of "passwords")
+
+
+Contact Info:
+email: Tony.Bernhardt@gmail.com
