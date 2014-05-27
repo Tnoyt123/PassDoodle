@@ -3,6 +3,7 @@ package com.grimnirdesigns.passdoodle_unsecure.app;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 
 public class MainMenuActivity extends Activity implements MainMenuFragment.OnMainMenuFragmentInteractionListener{
@@ -26,5 +27,7 @@ public class MainMenuActivity extends Activity implements MainMenuFragment.OnMai
     @Override
     public void onFragmentRegisterButtonPressed() {
         //Load Register activity
+        Intent i = new Intent(this, RegisterUserActivity.class);
+        startActivity(i);
     }
 }

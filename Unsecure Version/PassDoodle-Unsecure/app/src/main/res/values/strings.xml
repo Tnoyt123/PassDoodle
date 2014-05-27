@@ -6,7 +6,12 @@
     <string name="action_settings">Settings</string>
     <string name="Login">Login</string>
     <string name="Register">Register</string>
+
     <string name="title_activity_register_user">Register</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="activity_register_user_PassDoodleHere">Please draw your PassDoodle here:</string>
+    <string name="activity_register_user_UserNameHere">Please enter your desired username here:</string>
+    <string name="activity_register_user_UserNameHint">Username</string>
+    <string name="activity_register_user_ClearDoodle">Clear Doodle</string>
+    <string name="activity_register_user_Submit">Register User</string>
 
 </resources>

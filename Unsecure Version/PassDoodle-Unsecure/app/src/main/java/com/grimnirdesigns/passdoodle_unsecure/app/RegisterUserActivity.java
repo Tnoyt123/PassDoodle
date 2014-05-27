@@ -1,36 +1,58 @@
 package com.grimnirdesigns.passdoodle_unsecure.app;
 
 import android.app.Activity;
+import android.graphics.Path;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class RegisterUserActivity extends Activity {
+
+    private Button mClearDoodleButton, mSubmitButton;
+    private DrawingBoardView mDrawingBoardView;
+    private EditText mUserNameEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user);
+
+        mClearDoodleButton = (Button)findViewById(R.id.activity_register_user_ClearDoodleButton);
+        mClearDoodleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearDoodle();
+            }
+        });
+
+        mSubmitButton = (Button)findViewById(R.id.activity_register_user_SubmitButton);
+        mSubmitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                submitRegistration();
+            }
+        });
+
+        mDrawingBoardView = (DrawingBoardView)findViewById(R.id.activity_register_user_DrawingBoardView);
+
+        mUserNameEditText = (EditText)findViewById(R.id.activity_register_user_UserNameEditText);
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.register_user, menu);
-        return true;
+    private void clearDoodle() {
+        mDrawingBoardView.resetDrawPath();
+        mDrawingBoardView.clearDrawing();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+    private void submitRegistration() {
+
+    }
+
+    private String pathToString(Path path) {
+
+        return null;
     }
 }
