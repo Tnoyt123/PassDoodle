@@ -72,7 +72,13 @@ public class DrawingBoardView extends View {
             canvas.drawLine(0, (float)gridSquareEdge*i,(float)getWidth(), (float)gridSquareEdge*i, gridPaint);
         }
 
-        //canvas.drawRect(0, 0, getWidth(), getHeight(), gridPaint);
+        float[] edgeLinePoints = {0, 1, getWidth()-1, 1,  //Top line
+                                  getWidth()-1, 0, getWidth()-1, getHeight(), //Right line
+                                  0, getHeight()-1, getWidth(), getHeight()-1, //Bottom line
+                                  1, 0, 1, getHeight()-1}; //Left line
+
+        canvas.drawLines(edgeLinePoints, gridPaint);
+
     }
 
     @Override
@@ -145,4 +151,7 @@ public class DrawingBoardView extends View {
         mDrawingEnabled = true;
     }
 
+    public boolean isDrawingEnabled() {
+        return mDrawingEnabled;
+    }
 }

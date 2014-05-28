@@ -1,21 +1,10 @@
 <LinearLayout
+    android:id="@+id/activity_register_user_ScreenView"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:padding="10dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/activity_register_user_PassDoodleHere"/>
-
-    <com.grimnirdesigns.passdoodle_unsecure.app.DrawingBoardView
-        android:id="@+id/activity_register_user_DrawingBoardView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_gravity="center_horizontal"/>
 
     <TextView
         android:layout_marginTop="10dp"
@@ -29,6 +18,18 @@
         android:layout_height="wrap_content"
         android:hint="@string/activity_register_user_UserNameHint"
         android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_register_user_PassDoodleHere"/>
+
+    <com.grimnirdesigns.passdoodle_unsecure.app.DrawingBoardView
+        android:id="@+id/activity_register_user_DrawingBoardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
