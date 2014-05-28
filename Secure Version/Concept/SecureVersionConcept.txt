@@ -1,0 +1,7 @@
+Unlike the Unsecure version of PassDoodle, which will compare an attempted login's PassDoodle to the stored PassDoodle and ensure that the path drawn lies closely enough to warrant verification, the Secure version must be able to store a salted-hash representation of a PassDoodle, and compare this to an attempted login PassDoodle that has been transformed in a similar manner. Since this method will not allow for "tolerances" or "ranges of acceptable points", the underlying structure of the PassDoodles must be changed.
+
+This will be accomplished by dividing the drawing area into small grid squares. These grid squares will not be shown to the user, and the user will only see the basic guidance grid, as before. When a user draws their desired PassDoodle, their path will cross through a series of these grid squares. By recording what squares are passed through and in what order, a String representation of their PassDoodle can be created, which can then be run through a hashing algorithm and saved securely.
+
+When a user wishes to sign in, they will attempt to recreate their saved path. In doing so, they will hopefully pass through the same grid squares in the same order, allowing for the creation of a String that can be sent to a server for verification. The server can then salt and hash the input String-representation, and compare it to the saved value.
+
+The preciseness of this method can be adjusted by changing the number of divisions on the drawing canvas, thus making the grid squares larger or smaller, and thus more or less tolerable, respectively.
