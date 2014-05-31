@@ -14,4 +14,12 @@
     <string name="activity_register_user_ClearDoodle">Clear Doodle</string>
     <string name="activity_register_user_Submit">Register User</string>
 
+    <string name="title_activity_login">Login</string>
+    <string name="activity_login_UserNameHere">Username:</string>
+    <string name="activity_login_UserNameHint">Enter your username</string>
+    <string name="activity_login_PassDoodleHere">PassDoodle:</string>
+    <string name="activity_login_ClearDoodleButton">Clear Doodle</string>
+    <string name="activity_login_SubmitButton">Submit</string>
+
+
 </resources>

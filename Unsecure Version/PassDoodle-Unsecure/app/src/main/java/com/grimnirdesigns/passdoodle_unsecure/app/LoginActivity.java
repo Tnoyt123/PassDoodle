@@ -13,24 +13,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.Arrays;
 
-
-public class RegisterUserActivity extends Activity {
+public class LoginActivity extends Activity {
 
     public static final int PATH_STEPS = 100;
 
-    private Button mClearDoodleButton, mSubmitButton;
-    private DrawingBoardView mDrawingBoardView;
-    private EditText mUserNameEditText;
     private View mScreenView;
+    private EditText mUserNameEditText;
+    private DrawingBoardView mDrawingBoardView;
+    private Button mClearDoodleButton, mSubmitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_user);
+        setContentView(R.layout.activity_login);
 
-        mScreenView = findViewById(R.id.activity_register_user_ScreenView);
+        mScreenView = findViewById(R.id.activity_login_ScreenView);
         mScreenView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +37,11 @@ public class RegisterUserActivity extends Activity {
             }
         });
 
-        mClearDoodleButton = (Button)findViewById(R.id.activity_register_user_ClearDoodleButton);
+        mUserNameEditText = (EditText)findViewById(R.id.activity_login_UserNameEditText);
+
+        mDrawingBoardView = (DrawingBoardView)findViewById(R.id.activity_login_DrawingBoardView);
+
+        mClearDoodleButton = (Button)findViewById(R.id.activity_login_ClearDoodleButton);
         mClearDoodleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,31 +49,22 @@ public class RegisterUserActivity extends Activity {
             }
         });
 
-        mSubmitButton = (Button)findViewById(R.id.activity_register_user_SubmitButton);
+        mSubmitButton = (Button)findViewById(R.id.activity_login_SubmitButton);
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                submitRegistration();
+                submitLogin();
             }
         });
-
-        mDrawingBoardView = (DrawingBoardView)findViewById(R.id.activity_register_user_DrawingBoardView);
-
-        mUserNameEditText = (EditText)findViewById(R.id.activity_register_user_UserNameEditText);
     }
 
-    private void clearDoodle() {
-        mDrawingBoardView.resetDrawPath();
-        mDrawingBoardView.clearDrawing();
-    }
-
-    //Stub method until server mockup is ready
-    private void submitRegistration() {
+    // Stub method until server mockup is ready
+    private void submitLogin() {
         if (!mDrawingBoardView.isDrawingEnabled()) {
             Path drawnPath = mDrawingBoardView.getDrawPath();
             String normalizedPath = normalizePath(drawnPath, mDrawingBoardView.getWidth());
 
-            Toast.makeText(getApplicationContext(), normalizedPath.substring(0, 25),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), normalizedPath.substring(0, 25), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -96,4 +89,12 @@ public class RegisterUserActivity extends Activity {
 
         return output;
     }
+
+    private void clearDoodle() {
+        if (mDrawingBoardView != null) {
+            mDrawingBoardView.resetDrawPath();
+            mDrawingBoardView.clearDrawing();
+        }
+    }
+
 }

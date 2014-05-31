@@ -22,6 +22,8 @@ public class MainMenuActivity extends Activity implements MainMenuFragment.OnMai
     @Override
     public void onFragmentLoginButtonPressed() {
         //Load Login activity
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
     }
 
     @Override
