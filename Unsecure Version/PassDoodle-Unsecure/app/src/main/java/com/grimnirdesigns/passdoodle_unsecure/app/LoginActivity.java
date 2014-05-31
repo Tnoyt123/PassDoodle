@@ -13,6 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/*
+This activity allows for "logging in", which is simply the verification that a given username and
+PassDoodle combination exist within the system.
+ */
 
 public class LoginActivity extends Activity {
 

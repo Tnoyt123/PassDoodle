@@ -15,7 +15,16 @@ import android.widget.Toast;
 
 import java.util.Arrays;
 
-
+/*
+This class allows a user to register a username and PassDoodle combination. The user will be
+notified that the register action failed under the following circumstances:
+    * The input username is already in use
+    * No username is input when the Submit button is pressed
+    * No PassDoodle is recorded when the Submit button is pressed
+    * Connection to the server is not possible
+When all necessary conditions are met, the user will be notified that their username-PassDoodle
+combination has been successfully stored.
+*/
 public class RegisterUserActivity extends Activity {
 
     public static final int PATH_STEPS = 100;

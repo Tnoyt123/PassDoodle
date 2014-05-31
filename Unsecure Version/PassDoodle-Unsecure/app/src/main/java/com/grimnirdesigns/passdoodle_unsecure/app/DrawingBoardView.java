@@ -10,9 +10,11 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-
-/**
- * TODO: document your custom view class.
+/*
+This View acts as the drawing surface for PassDoodle. It features a visibly divided, square surface
+(the default division is a 4x4 grid), that allows a user to draw a single-stroke doodle. Once a
+single stroke has been drawn, the View must be cleared before another line can be drawn. A drawn
+line can be extracted from the View in the form of an android.graphics.Path object.
  */
 public class DrawingBoardView extends View {
 
