@@ -5,6 +5,8 @@ import android.content.Context;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
 import android.os.Bundle;
+import android.test.suitebuilder.TestSuiteBuilder;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +24,8 @@ public class LoginActivity extends Activity {
 
     public static final int PATH_STEPS = 100;
 
+    private MockupServerCommunicator mServerCommunicator;
+
     private View mScreenView;
     private EditText mUserNameEditText;
     private DrawingBoardView mDrawingBoardView;
@@ -31,6 +35,8 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        mServerCommunicator = new MockupServerCommunicator();
 
         mScreenView = findViewById(R.id.activity_login_ScreenView);
         mScreenView.setOnClickListener(new View.OnClickListener() {
@@ -64,11 +70,29 @@ public class LoginActivity extends Activity {
 
     // Stub method until server mockup is ready
     private void submitLogin() {
+        Log.d("submitLogin", "begin login");
         if (!mDrawingBoardView.isDrawingEnabled()) {
             Path drawnPath = mDrawingBoardView.getDrawPath();
             String normalizedPath = normalizePath(drawnPath, mDrawingBoardView.getWidth());
 
-            Toast.makeText(getApplicationContext(), normalizedPath.substring(0, 25), Toast.LENGTH_LONG).show();
+            String username = mUserNameEditText.getText().toString().trim();
+
+            if (username == null || username == "") {
+                Toast.makeText(this, "Please enter your username.", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (mServerCommunicator.isConnectionOpen()) {
+                if(mServerCommunicator.userLogin(username, normalizedPath)) {
+                    Toast.makeText(this, "LOGIN SUCCESSFUL!", Toast.LENGTH_LONG).show();
+                    return;
+                } else {
+                    Toast.makeText(this, "Login failed.", Toast.LENGTH_LONG).show();
+                    return;
+                }
+            }
+        }
+        else {
+            Toast.makeText(this, "Please enter your PassDoodle.", Toast.LENGTH_LONG).show();
         }
     }
 

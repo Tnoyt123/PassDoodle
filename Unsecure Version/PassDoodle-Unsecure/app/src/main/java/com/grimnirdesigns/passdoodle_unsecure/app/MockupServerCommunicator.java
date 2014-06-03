@@ -1,5 +1,7 @@
 package com.grimnirdesigns.passdoodle_unsecure.app;
 
+import android.util.Log;
+
 /*
 This class acts as a stand-in for an offline version of ServerCommunicator.
 This class, in conjunction with MockupServer, will be used to test the theoretical functionality of
@@ -10,16 +12,18 @@ maintain the same signature.
 public class MockupServerCommunicator {
 
     private boolean mConnectionOpen;
+    private MockupServer mMockupServer;
 
     public MockupServerCommunicator() {
-        mConnectionOpen = false;
+        openConnection();
     }
 
     /*
     Establishes connection to the MockupServer
      */
     public void openConnection() {
-
+        mMockupServer = MockupServer.get();
+        mConnectionOpen = true;
     }
 
     /*
@@ -27,7 +31,7 @@ public class MockupServerCommunicator {
     still available.
      */
     public boolean isConnectionOpen() {
-        return false;
+        return mConnectionOpen;
     }
 
     /*
@@ -35,7 +39,7 @@ public class MockupServerCommunicator {
     false otherwise.
      */
     public boolean checkForUsername(String username) {
-        return false;
+        return mMockupServer.queryUsername(username);
     }
 
     /*
@@ -43,7 +47,7 @@ public class MockupServerCommunicator {
     of the drawn Path. Returns true if the registration succeeds, false otherwise.
      */
     public boolean registerUser(String username, String normalizedPath) {
-        return false;
+        return mMockupServer.registerUser(username, normalizedPath);
     }
 
     /*
@@ -52,7 +56,8 @@ public class MockupServerCommunicator {
      points. Returns true if the username exists, and the points match up; false otherwise.
      */
     public boolean userLogin(String username, String normalizedPath) {
-        return false;
+        Log.d("MockupServerCommunicator", "begin userLogin");
+        return mMockupServer.loginUser(username, normalizedPath);
     }
 
     /*
@@ -62,4 +67,7 @@ public class MockupServerCommunicator {
 
     }
 
+    public int getCount() {
+        return mMockupServer.getCount();
+    }
 }

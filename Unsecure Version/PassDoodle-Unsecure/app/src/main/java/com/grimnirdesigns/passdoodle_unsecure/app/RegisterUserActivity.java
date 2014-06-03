@@ -29,6 +29,8 @@ public class RegisterUserActivity extends Activity {
 
     public static final int PATH_STEPS = 100;
 
+    private MockupServerCommunicator mServerCommunicator;
+
     private Button mClearDoodleButton, mSubmitButton;
     private DrawingBoardView mDrawingBoardView;
     private EditText mUserNameEditText;
@@ -38,6 +40,8 @@ public class RegisterUserActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user);
+
+        mServerCommunicator = new MockupServerCommunicator();
 
         mScreenView = findViewById(R.id.activity_register_user_ScreenView);
         mScreenView.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +84,28 @@ public class RegisterUserActivity extends Activity {
             Path drawnPath = mDrawingBoardView.getDrawPath();
             String normalizedPath = normalizePath(drawnPath, mDrawingBoardView.getWidth());
 
-            Toast.makeText(getApplicationContext(), normalizedPath.substring(0, 25),Toast.LENGTH_LONG).show();
+            String username = mUserNameEditText.getText().toString().trim();
+
+            if (username == null || username == "") {
+                Toast.makeText(this, "Please enter a username.", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (mServerCommunicator.isConnectionOpen()) {
+                if (mServerCommunicator.checkForUsername(username)) {
+                    Toast.makeText(this, "That username is already in use.", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if (mServerCommunicator.registerUser(username, normalizedPath)) {
+                    Toast.makeText(this, "Registration successful!", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                Toast.makeText(this, "Something went wrong.", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "Server not connected", Toast.LENGTH_SHORT).show();
+            }
+        }
+        else {
+            Toast.makeText(this, "Please enter a PassDoodle.", Toast.LENGTH_LONG).show();
         }
     }
 
