@@ -11,6 +11,10 @@
     <string name="activity_register_user_PassDoodleHere">Please draw your PassDoodle here:</string>
     <string name="activity_register_user_UserNameHere">Please enter your desired username here:</string>
     <string name="activity_register_user_UserNameHint">Username</string>
+    <string name="activity_register_user_NameHere">Please enter your name:</string>
+    <string name="activity_register_user_NameHint">Name</string>
+    <string name="activity_register_user_EmailHere">Please enter your email address:</string>
+    <string name="activity_register_user_EmailHint">Email Address</string>
     <string name="activity_register_user_ClearDoodle">Clear Doodle</string>
     <string name="activity_register_user_Submit">Register User</string>
 
@@ -20,6 +24,13 @@
     <string name="activity_login_PassDoodleHere">PassDoodle:</string>
     <string name="activity_login_ClearDoodleButton">Clear Doodle</string>
     <string name="activity_login_SubmitButton">Submit</string>
+
+    <string name="title_activity_logged_in">LoggedInActivity</string>
+    <string name="activity_logged_in_SuccessfulLogIn">Congratulations, %s! You have been successfully
+        logged into PassDoodle. Would you like to receive an email with contact information about
+        the developer?</string>
+    <string name="activity_logged_in_SendEmail">Send Me An Email!</string>
+    <string name="activity_logged_in_LogOut">Log Out</string>
 
 
 </resources>

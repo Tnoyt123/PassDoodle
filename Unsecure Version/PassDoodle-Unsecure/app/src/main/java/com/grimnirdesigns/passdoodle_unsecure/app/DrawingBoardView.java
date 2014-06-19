@@ -45,6 +45,8 @@ public class DrawingBoardView extends View {
 
         mCanvasPaint = new Paint(Paint.DITHER_FLAG);
 
+        mCanvasBitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+
         mDrawingEnabled = true;
     }
 
@@ -107,11 +109,11 @@ public class DrawingBoardView extends View {
         int widthWithoutPadding = width - getPaddingLeft() - getPaddingRight();
         int heightWithoutPadding = height - getPaddingTop() - getPaddingBottom();
 
-        if (widthWithoutPadding > heightWithoutPadding) {
-            width = heightWithoutPadding;
-        } else {
+      //  if (widthWithoutPadding > heightWithoutPadding) {
+       //     width = heightWithoutPadding;
+       // } else {
             height = widthWithoutPadding;
-        }
+       // }
 
         setMeasuredDimension(width, height);
     }

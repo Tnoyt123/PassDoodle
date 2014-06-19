@@ -32,6 +32,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="MainMenuActivity" />
         </activity>
+        <activity
+            android:name=".LoggedInActivity"
+            android:label="@string/title_activity_logged_in" >
+        </activity>
     </application>
 
 </manifest>

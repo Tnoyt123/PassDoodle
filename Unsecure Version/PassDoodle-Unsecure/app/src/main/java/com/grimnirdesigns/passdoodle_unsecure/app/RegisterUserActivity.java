@@ -33,7 +33,7 @@ public class RegisterUserActivity extends Activity {
 
     private Button mClearDoodleButton, mSubmitButton;
     private DrawingBoardView mDrawingBoardView;
-    private EditText mUserNameEditText;
+    private EditText mUserNameEditText, mNameEditText, mEmailEditText;
     private View mScreenView;
 
     @Override
@@ -71,6 +71,10 @@ public class RegisterUserActivity extends Activity {
         mDrawingBoardView = (DrawingBoardView)findViewById(R.id.activity_register_user_DrawingBoardView);
 
         mUserNameEditText = (EditText)findViewById(R.id.activity_register_user_UserNameEditText);
+
+        mNameEditText = (EditText)findViewById(R.id.activity_register_user_NameEditText);
+
+        mEmailEditText = (EditText)findViewById(R.id.activity_register_user_EmailEditText);
     }
 
     private void clearDoodle() {
