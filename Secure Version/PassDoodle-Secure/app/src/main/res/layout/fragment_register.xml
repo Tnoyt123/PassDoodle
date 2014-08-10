@@ -1,0 +1,86 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_register_MainScrollView"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent">
+
+    <LinearLayout
+        android:id="@+id/fragment_register_ScreenView"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_register_UserNameHere"/>
+
+        <EditText
+            android:id="@+id/fragment_register_UserNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/fragment_register_UserNameHint"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_register_NameHere"/>
+
+        <EditText
+            android:id="@+id/fragment_register_NameEditText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/fragment_register_NameHint"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_register_EmailHere"/>
+
+        <EditText
+            android:id="@+id/fragment_register_EmailEditText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/fragment_register_EmailHint"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_register_PassDoodleHere"/>
+
+        <com.grimnirdesigns.passdoodle_unsecure.app.DrawingBoardView
+            android:id="@+id/fragment_register_DrawingBoardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/fragment_register_ClearDoodleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/fragment_register_ClearDoodle"/>
+
+            <Button
+                android:id="@+id/fragment_register_SubmitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/fragment_register_Submit"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

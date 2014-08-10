@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:id="@+id/fragment_log_in_ScreenView">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fragment_log_in_UserNameHere"/>
+
+    <EditText
+        android:id="@+id/fragment_log_in_UserNameEditText"
+        android:hint="@string/fragment_log_in_UserNameHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:text="@string/fragment_log_in_PassDoodleHere"/>
+
+    <com.grimnirdesigns.passdoodle_unsecure.app.DrawingBoardView
+        android:id="@+id/fragment_log_in_DrawingBoardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/fragment_log_in_ClearDoodleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_log_in_ClearDoodleButton"
+            android:layout_alignParentLeft="true"/>
+
+        <Button
+            android:id="@+id/fragment_log_in_SubmitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/fragment_log_in_SubmitButton"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

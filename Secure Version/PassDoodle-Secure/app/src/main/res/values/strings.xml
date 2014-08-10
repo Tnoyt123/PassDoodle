@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PassDoodle-Unsecure</string>
+    <string name="title_activity_main_menu">PassDoodle</string>
+    <string name="Login">Login</string>
+    <string name="Register">Register</string>
+    <string name="title_activity_logging_in">Log In</string>
+    <string name="title_fragment_log_in">Login</string>
+    <string name="fragment_log_in_UserNameHere">Username:</string>
+    <string name="fragment_log_in_UserNameHint">Enter your username</string>
+    <string name="fragment_log_in_PassDoodleHere">PassDoodle:</string>
+    <string name="fragment_log_in_ClearDoodleButton">Clear Doodle</string>
+    <string name="fragment_log_in_SubmitButton">Submit</string>
+    <string name="fragment_logged_in_SuccessfulLogIn">Congratulations, %s! You have been successfully
+        logged into PassDoodle. Would you like to receive an email with contact information about
+        the developer?</string>
+    <string name="fragment_logged_in_SendEmail">Send Me An Email!</string>
+    <string name="fragment_logged_in_LogOut">Log Out</string>
+    <string name="title_activity_register">Register</string>
+    <string name="title_fragment_register">Register</string>
+    <string name="fragment_register_PassDoodleHere">Please draw your PassDoodle here:</string>
+    <string name="fragment_register_UserNameHere">Please enter your desired username here:</string>
+    <string name="fragment_register_UserNameHint">Username</string>
+    <string name="fragment_register_NameHere">Please enter your name:</string>
+    <string name="fragment_register_NameHint">Name</string>
+    <string name="fragment_register_EmailHere">Please enter your email address:</string>
+    <string name="fragment_register_EmailHint">Email Address</string>
+    <string name="fragment_register_ClearDoodle">Clear Doodle</string>
+    <string name="fragment_register_Submit">Register User</string>
+
+</resources>
